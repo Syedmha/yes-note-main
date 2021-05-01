@@ -5,7 +5,7 @@ import List from "@material-ui/core/List";
 import { Divider, Button } from "@material-ui/core";
 import SidebarItem from "../sidebaritem/sidebarItem";
 import useFirestore from "../hooks/useFirestore";
-import firebase, { projectAuth, projectFirestore } from "../firebase/config";
+import firebase, { projectFirestore } from "../firebase/config";
 
 const Sidebar = ({ classes, note, setNote }) => {
   const [newNote, setNewNote] = useState({
@@ -19,7 +19,7 @@ const Sidebar = ({ classes, note, setNote }) => {
 
   useEffect(() => {
     setNote({ ...note, selectedNote: allNotes[note.selectedNoteIndex] });
-  }, [allNotes, note.selectedNote]);
+  }, [allNotes, note.selectedNote,setNote]);
 
   const createNewNote = () => {
     setNewNote({ ...newNote, addingNote: !addingNote });
