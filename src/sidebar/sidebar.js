@@ -19,7 +19,7 @@ const Sidebar = ({ classes, note, setNote }) => {
 
   useEffect(() => {
     setNote({ ...note, selectedNote: allNotes[note.selectedNoteIndex] });
-  }, [allNotes, note.selectedNote, setNote, note,]);
+  }, [allNotes, note.selectedNote]);
 
   const createNewNote = () => {
     setNewNote({ ...newNote, addingNote: !addingNote });

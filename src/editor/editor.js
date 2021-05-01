@@ -31,7 +31,7 @@ const Editor = ({ classes, note }) => {
           body: editorNoteBody,
         });
     }
-  }, [updateBodyDebounce, editorNoteBody, note.selectedNote.id]);
+  }, [updateBodyDebounce]);
 
   useEffect(() => {
     projectFirestore
@@ -40,7 +40,7 @@ const Editor = ({ classes, note }) => {
       .update({
         title: editorNoteTitle,
       });
-  }, [updateTitleDebounce, note.selectedNote.id, editorNoteTitle]);
+  }, [updateTitleDebounce]);
 
   const updateNote = (text) => {
     setEditorNoteBody(text);
