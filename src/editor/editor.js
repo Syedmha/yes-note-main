@@ -42,9 +42,12 @@ const Editor = ({ classes, note }) => {
       });
   }, [updateTitleDebounce]);
 
+  // Updating editor body
   const updateNote = (text) => {
     setEditorNoteBody(text);
   };
+
+  // Updating Title
   const updateTitle = (e) => {
     setEditorNoteTitle(e.target.value);
   };
@@ -67,8 +70,7 @@ const Editor = ({ classes, note }) => {
         id="quill"
         onChange={updateNote}
         value={editorNoteBody}
-        // modules={modules}
-        // formats={formats}
+        
       ></ReactQuill>
     </div>
   );

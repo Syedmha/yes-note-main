@@ -13,6 +13,7 @@ const Sidebar = ({ classes, note, setNote }) => {
     title: "",
   });
 
+  //returns an array
   const { allNotes } = useFirestore('notes');
 
   const { addingNote, title } = newNote;
